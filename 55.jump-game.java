@@ -5,10 +5,15 @@
  */
 class Solution {
     public boolean canJump(int[] A) {
-        int max = 0;
+    //看当前所在的位置和能够到达的位置比较
+    //reachable > current 就继续迭代当前位置
+    //reachable < current 返回false
+
+
+        int reachable = 0;
         for(int i=0;i<A.length;i++){
-            if(i>max) {return false;}
-            max = Math.max(A[i]+i,max);
+            if(i>reachable) {return false;}
+            reachable = Math.max(A[i]+i,reachable);
         }
         return true;
     }
