@@ -27,7 +27,7 @@ class Solution {
     }
     private String construct(int num){
 
-
+        //创建字典，把9和4的情况列出来
         if(num == 1) return "I";
         if(num == 4) return "IV";
         if(num == 5) return "V";
