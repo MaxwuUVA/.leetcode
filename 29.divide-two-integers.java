@@ -27,6 +27,8 @@ class Solution {
         }
         return sign == -1 ? -res:res;
     }*/
+    //此题的test case非常恶心，主要思路时用左移相当于除2
+    //参考了大神lee215的解法
     public int divide(int A, int B) {
         if (A == 1 << 31 && B == -1) return (1 << 31) - 1;
         int a = Math.abs(A), b = Math.abs(B), res = 0, x = 0;
