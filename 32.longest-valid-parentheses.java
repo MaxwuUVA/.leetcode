@@ -15,6 +15,8 @@ class Solution {
         int res = helper(s, memo, start, end);
         return res;*/
         //参考leetcode答案
+        //dp[i]为已charat(i)结尾的最长有效括号
+        //todo更新stack答案
         int len = s.length();
         if(s.length() == 0) return 0;
         int[] dp = new int[len];
@@ -22,11 +24,10 @@ class Solution {
         int left = 0;
         for(int i = 0;i < len;i++){
             if(s.charAt(i) == '('){
-                //dp[i] = 0;
                 left++;
             }else if(left > 0){
-                dp[i] += dp[i-1] + 2;
-                dp[i] += (i - dp[i]) >= 0 ? dp[i-dp[i]]:0;
+                dp[i] += dp[i-1] + 2;//"(())"型
+                dp[i] += (i - dp[i]) >= 0 ? dp[i-dp[i]]:0;//“()(())"检查(())型前的括号
                 result = Math.max(result, dp[i]);
                 left--;
             }
