@@ -9,6 +9,13 @@ import java.util.Set;
 class Solution {
     public boolean checkInclusion(String s1, String s2) {
 
+        //sliding window
+        //由于都是小写，所以可以创建大小为26的字典
+        //map1[]为字典s1,map2[]为字典s2
+        //在s2上创建大小为s1.length的滑动窗口
+        //假如map2与map1 match可以返回true
+        //否则返回false
+
         if(s1.length() > s2.length()) return false;
 
         int[] map1 = new int[26];
