@@ -36,7 +36,7 @@ class Solution {
                 }
              }
          }
-
+        //time complexity O(n2)
         return true;
         
     }
