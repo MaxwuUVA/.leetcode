@@ -15,6 +15,7 @@ class Solution {
            if(nums[i] < nums[i-1]) down = up + 1;
        }        
        return Math.max(up,down);
+       //todo 更新 动态规划方法
     }
 }
 
