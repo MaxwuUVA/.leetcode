@@ -3,16 +3,17 @@
  *
  * [1080] Insufficient Nodes in Root to Leaf Paths
  */
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
+
+ //Definition for a binary tree node.
+  
+ 
 class Solution {
+   public class TreeNode {
+     int val;
+     TreeNode left;
+     TreeNode right;
+     TreeNode(int x) { val = x; }
+   }
     public TreeNode sufficientSubset(TreeNode root, int limit) {
 
         if(root == null) return root;
