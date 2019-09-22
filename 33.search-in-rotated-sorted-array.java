@@ -1,16 +1,13 @@
-import javax.swing.text.AbstractDocument.LeafElement;
-
 /*
  * @lc app=leetcode id=33 lang=java
  *
  * [33] Search in Rotated Sorted Array
  */
 class Solution {
-    private int t;
     public int search(int[] nums, int target) {
 
         //O(lgN)binary search
-        int start = 0, end = nums.length-1,t = 0;
+        int start = 0, end = nums.length-1;
         return binarysearch(nums, target, start, end);
     
       
