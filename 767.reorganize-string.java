@@ -14,7 +14,6 @@ class Solution {
             count = b;
             c = a;
         }
-        
     }
     public String reorganizeString(String S) {
         //yext
