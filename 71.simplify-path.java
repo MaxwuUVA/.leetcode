@@ -1,5 +1,3 @@
-import java.util.Deque;
-
 /*
  * @lc app=leetcode id=71 lang=java
  *
@@ -13,30 +11,28 @@ class Solution {
        // stack.peek() = '/' next'/'dont push
        // last '/' remove
        String[] s = path.split("/");
-       Deque<String> queue = new LinkedList<>();
+       StringBuilder sb = new StringBuilder("/");
        for(String S:s){
            if(S.equals("")||S.equals(".")){
-                   continue;
+               continue;
            }
-           if(S.equals("..")){
-                if(!queue.isEmpty())queue.removeLast();
-                else{
-                    continue;
+           else if(S.equals("..")){
+                if(sb.charAt(sb.length()-1) != '/')
+                {
+                       sb.deleteCharAt(sb.length()-1);
                 }
-            }
+                else{
+                       sb.delete(sb.length()-2, sb.length()-1);
+                }
+
+           }
            else{
-                queue.add(S);
+               sb.append(S);
+               sb.append('/');
            }
        }
-       StringBuilder sb = new StringBuilder();
-       while(!queue.isEmpty()){
-
-           sb.append("/");
-           sb.append(queue.poll());
-           
-       }
-
-       return sb.length() == 0 ? "/":sb.toString();//corner case ""output "/"
+       sb.deleteCharAt(sb.length()-1);
+       return sb.toString();
     }
 }
 
